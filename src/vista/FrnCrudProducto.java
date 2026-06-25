@@ -400,7 +400,6 @@ public class FrnCrudProducto extends JFrame implements ActionListener, MouseList
 		String fechaVencimiento = txtVencimiento.getText().trim();
 		String categoria = cboCategoria.getSelectedItem().toString();
 		String fechaProduccion = txtProduccion.getText().trim();
-		int stockNum = Integer.parseInt(stock);
 
 		// Validaciones
 		if (nombre.matches(ValidateUtil.TEXTO_45) == false) {
@@ -420,6 +419,8 @@ public class FrnCrudProducto extends JFrame implements ActionListener, MouseList
 					"El stock no es válido. Debe contener solo números");
 			return;
 		}
+		
+		int stockNum = Integer.parseInt(stock);
 
 		if (fechaVencimiento.matches(ValidateUtil.DATE_YYYY_MM_DD) == false) {
 			JOptionPane.showMessageDialog(this,
